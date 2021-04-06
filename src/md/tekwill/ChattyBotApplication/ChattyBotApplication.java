@@ -22,13 +22,10 @@ public class ChattyBotApplication {
         System.out.println("\nTell me your real age, and let's see if my guess is right: ");
         int realAge = in.nextInt();
         for (; realAge > 120 || realAge < 0; realAge = in.nextInt()) {
-            if (realAge < 0) {
-                System.out.println("Heeeeeeey, somebody must be joking here. You can't be that young! Please try again!");
-                System.out.println("Tell me your real age, and let's see if my guess is right: ");
-            } else if (realAge > 120) {
-                System.out.println("Heeeeeeey, somebody must be joking here. You can't be that old! Please try again!");
-                System.out.println("Tell me your real age, and let's see if my guess is right: ");
-            }
+            String oldOrYoung = realAge > 120 ? "old" : "young";
+
+            System.out.println("Heeeeeeey, somebody must be joking here. You can't be that " + oldOrYoung + "! Please try again!");
+            System.out.println("Tell me your real age, and let's see if my guess is right: ");
         }
 
         if (realAge == userAge) {
